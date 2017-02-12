@@ -1,14 +1,25 @@
 group 'tech.srwaggon'
 version '1.0-SNAPSHOT'
 
+apply plugin: 'application'
+apply plugin: 'idea'
 apply plugin: 'java'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
+
+sourceSets.main.java
+sourceSets.test.java
+
+mainClassName = 'tech.srwaggon.lings.Main'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'com.google.guava:guava:19.0'
+    compile 'javax.inject:javax.inject:1'
+    compile 'org.projectlombok:lombok:1.16.14'
+    compile "org.springframework.boot:spring-boot-starter:1.5.1.RELEASE"
+    testCompile 'junit:junit:4.11'
 }
